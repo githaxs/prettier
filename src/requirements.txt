@@ -1,0 +1,4 @@
+git+https://github_token:x-oauth-basic@github.com/githaxs/code-check.git
+git+https://github_token:x-oauth-basic@github.com/githaxs/base-task.git@v0.0.5
+git+https://github.com/githaxs/task-interfaces
+sentry-sdk
