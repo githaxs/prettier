@@ -17,6 +17,7 @@ class Task(MetaTaskInterface):
     fail_summary = "All files not formatted correctly."
     fail_text = ""
     actions = None
+    subscription_tier = "free"
 
     def execute(self, github_body, settings) -> bool:
         code_check = CodeCheck(
