@@ -8,8 +8,9 @@ RUN yum install -y nodejs
 
 RUN npm install -g prettier
 
-COPY all_requirements.txt .
-RUN python3.8 -m pip install -r all_requirements.txt
+RUN echo 12
+COPY requirements.txt .
+RUN python3.8 -m pip install -r requirements.txt
 
 COPY . .
 
