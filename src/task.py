@@ -15,7 +15,7 @@ class Task(MetaTaskInterface):
     pass_text = ""
     fail_summary = "All files not formatted correctly."
     type = "code_format"
-    source_script_path="%s/task.sh" % os.path.dirname(__file__)
+    source_script_path = "%s/task.sh" % os.path.dirname(__file__)
     fail_text = ""
     _actions = [
         {"label": "Fix", "identifier": "fix", "description": "Fix formatting issues."}
