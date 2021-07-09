@@ -8,7 +8,7 @@ run_prettier() {
     fi
 
     if [[ $1 =~ .*.(js|ts|scss|css|yaml|yml|html|jsx)$ ]]; then
-        prettier --write "$config" $1
+        prettier --write "$config" "$1"
     fi
 }
 
