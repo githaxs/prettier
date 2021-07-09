@@ -1,4 +1,3 @@
-import json
 import os
 
 from task_interfaces import MetaTaskInterface
@@ -23,9 +22,9 @@ class Task(MetaTaskInterface):
     ]
     subscription_level = SubscriptionLevels.FREE
 
-    def execute(self):
+    def execute(self, github_body):
         pass
-    
+
     @property
     def actions(self):
         return self._actions
