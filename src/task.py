@@ -13,7 +13,6 @@ class Task(TaskInterface):
     pass_summary = ""
     pass_text = ""
     fail_summary = "All files not formatted correctly."
-    source_script_path = "%s/task.sh" % os.path.dirname(__file__)
     fail_text = ""
     subscription_level = SubscriptionLevels.FREE
     actions = None
