@@ -1,10 +1,9 @@
 import os
 
-from task_interfaces import MetaTaskInterface
-from task_interfaces import SubscriptionLevels
+from task_interfaces import TaskInterface, SubscriptionLevels, TaskTypes
 
 
-class Task(MetaTaskInterface):
+class Task(TaskInterface):
     """
     Verifies files are formatted with prettier.
     """
@@ -14,21 +13,14 @@ class Task(MetaTaskInterface):
     pass_summary = ""
     pass_text = ""
     fail_summary = "All files not formatted correctly."
-    type = "code_format"
     source_script_path = "%s/task.sh" % os.path.dirname(__file__)
     fail_text = ""
-    _actions = [
-        {"label": "Fix", "identifier": "fix", "description": "Fix formatting issues."}
-    ]
     subscription_level = SubscriptionLevels.FREE
+    actions = None
+
+    type = TaskTypes.CODE_FORMAT
+    command = "prettier --write"
+    file_filters = ".*.(js|ts|scss|css|yaml|yml|html|jsx)$"
 
     def execute(self, github_body):
         pass
-
-    @property
-    def actions(self):
-        return self._actions
-
-    @actions.setter
-    def actions(self, actions):
-        self._actions = actions
