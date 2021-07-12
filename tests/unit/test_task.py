@@ -1,5 +1,3 @@
-import os
-
 from src.task import Task
 
 
