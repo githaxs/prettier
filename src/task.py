@@ -1,6 +1,9 @@
 import os
+import json
 
-from task_interfaces import TaskInterface, SubscriptionLevels, TaskTypes
+from task_interfaces import SubscriptionLevels
+from task_interfaces import TaskInterface
+from task_interfaces import TaskTypes
 
 
 class Task(TaskInterface):
@@ -13,7 +16,6 @@ class Task(TaskInterface):
     pass_summary = ""
     pass_text = ""
     fail_summary = "All files not formatted correctly."
-    source_script_path = "%s/task.sh" % os.path.dirname(__file__)
     fail_text = ""
     subscription_level = SubscriptionLevels.FREE
     actions = None
@@ -24,3 +26,11 @@ class Task(TaskInterface):
 
     def execute(self, github_body):
         pass
+
+    def pre_execute_hook(self, **kwargs):
+        settings = kwargs['settings']
+
+        if 'prettier_config' in settings:
+            with open("/tmp/prettier_config.json", "w") as f:
+                f.write(json.dumps(settings['prettier_config']))
+            self.command += " --config /tmp/prettier_config.json"
