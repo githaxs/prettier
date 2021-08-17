@@ -21,7 +21,6 @@ task:
 
 
   subscribed_events:
-    - pull_request.edited
     - pull_request.opened
     - pull_request.reopened
     - pull_request.synchronize
