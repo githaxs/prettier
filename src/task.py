@@ -1,5 +1,4 @@
 import os
-import json
 
 from task_interfaces import SubscriptionLevels
 from task_interfaces import TaskInterface
@@ -21,16 +20,8 @@ class Task(TaskInterface):
     actions = None
 
     type = TaskTypes.CODE_FORMAT
-    command = "prettier --write"
-    file_filters = ".*.(js|ts|scss|css|yaml|yml|html|jsx)$"
+    source_script_path = "%s/task.sh" % os.path.dirname(__file__)
+    handler = "task"
 
     def execute(self, github_body):
         pass
-
-    def pre_execute_hook(self, **kwargs):
-        settings = kwargs['settings']
-
-        if 'prettier_config' in settings:
-            with open("/tmp/prettier_config.json", "w") as f:
-                f.write(json.dumps(settings['prettier_config']))
-            self.command += " --config /tmp/prettier_config.json"

@@ -1,23 +1,13 @@
+version: v2
 name: Prettier
 slug: prettier
 type: content
 summary: Keep files formatted with Prettier
-description: |
-  [Prettier](https://prettier.io/) is an opinionated code formatter
-    created to reduce time spent deliberating over which style conventions
-    to use.
-
-    This task ensures all files are formatted with prettier and allows
-    you to create globally shared configurations.
-
-parameters:
-  - name: prettier_config
-    description: A map of [prettier options](https://prettier.io/docs/en/options.html)
-    required: yes
-    sample_value:
-      singleQuote: true
-      semi: false
-
+description: Keep files formatted with Prettier
+beta: true
+default_configuration:
+  installation:
+    org: true
 subscribed_events:
   - pull_request.opened
   - pull_request.reopened
