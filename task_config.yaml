@@ -5,6 +5,7 @@ type: content
 summary: Keep files formatted with Prettier
 description: Keep files formatted with Prettier
 beta: true
+subscription_level: 1
 default_configuration:
   installation:
     org: true
