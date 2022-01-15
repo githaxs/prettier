@@ -9,6 +9,7 @@ subscription_level: 1
 default_configuration:
   installation:
     org: true
+memory: 512
 subscribed_events:
   - pull_request.opened
   - pull_request.reopened
