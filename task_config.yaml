@@ -10,6 +10,7 @@ default_configuration:
   installation:
     org: true
 memory: 512
+timeout: 240
 subscribed_events:
   - pull_request.opened
   - pull_request.reopened
