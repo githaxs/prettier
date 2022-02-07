@@ -2,13 +2,21 @@ version: v2
 name: Prettier
 slug: prettier
 type: content
-summary: Keep files formatted with Prettier
-description: Keep files formatted with Prettier
-beta: true
+summary: Opinionated Code Formatter that supports many languages
+description: |
+  <a href="https://prettier.io">Prettier</a> is a popular code formatter that supports many languages.
+  <br>
+  One of the main inspirations for creating it was to eliminate bikeshedding over style. The tool is opinionated for this reason.
+  If you're interested in learning more about Prettier check out their <a href="https://prettier.io/docs/en/why-prettier.html">documentation</a> for
+  a more in-depth explanation.
+  <br>
+  Githaxs recommends you use the default Prettier settings without any changes to avoid the bikeshedding discussions.
+
+beta: false
 subscription_level: 1
 default_configuration:
   installation:
-    org: true
+    org: false
 memory: 512
 timeout: 240
 subscribed_events:

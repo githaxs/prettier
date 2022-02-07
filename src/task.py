@@ -19,6 +19,7 @@ class Task(TaskInterface):
     subscription_level = SubscriptionLevels.STARTUP
     actions = None
 
+    can_fix = True
     type = TaskTypes.CODE_FORMAT
     source_script_path = "%s/task.sh" % os.path.dirname(__file__)
     handler = "task"
