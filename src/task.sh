@@ -3,12 +3,10 @@ set -e
 
 run() {
     if [[ $1 =~ .*\.(js|ts|scss|css|yaml|yml|html|jsx)$ ]]; then
-        prettier --write "$1"
+        prettier --write "$1" > /dev/null
     fi
 }
 
 task() {
-    echo "Running Task..."
-
     foreach_changed_file run
 }
