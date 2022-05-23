@@ -14,6 +14,9 @@ description: |
   <br>
   Githaxs recommends you use the default Prettier settings without any changes to avoid the bikeshedding discussions.
 
+parameters:
+  - name: prettier_config
+    description: "A publicly available NPM package where your shared prettier config is published (i.e. @azz/prettier-config)"
 beta: false
 subscription_level: 1
 default_configuration:

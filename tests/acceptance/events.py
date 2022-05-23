@@ -7,5 +7,5 @@ events = [{'pull_request': {'head': {'ref': 'demo',
            'repository': {'full_name': 'githaxs/demo'},
            'githaxs': {'token': os.getenv('GITHUB_TOKEN'),
                        'subscription_level': 5,
-                       'task_settings': {},
+                       'task_settings': {"prettier_config": "@azz/prettier-config"},
                        'full_event_name': 'pull_request.opened'}}]
