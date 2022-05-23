@@ -5,7 +5,6 @@ PRETTIER_CONFIG=${PRETTIER_CONFIG:-""}
 
 run() {
     if [[ $1 =~ .*\.(js|ts|scss|css|yaml|yml|html|jsx)$ ]]; then
-        echo "Running prettier on $1"
         prettier --write "$1" > /dev/null
     fi
 }
