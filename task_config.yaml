@@ -26,7 +26,7 @@ subscription_level: 1
 default_configuration:
   installation:
     org: false
-memory: 512
+memory: 2048
 timeout: 240
 packages:
   node:

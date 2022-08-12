@@ -30,7 +30,7 @@ run_task() {
     # the config file.
     #git checkout .prettierrc || true > /dev/null 
 
-    if git diff > /dev/null; then
+    if [ $(git diff > /dev/null) -ne 0 ]; then
         echo '```diff'
         git diff
         echo '```'
