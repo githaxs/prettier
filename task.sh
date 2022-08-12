@@ -3,13 +3,7 @@ set -e
 
 PRETTIER_CONFIG=${PRETTIER_CONFIG:-""}
 
-run() {
-    if [[ $1 =~ .*\.(js|ts|scss|css|yaml|yml|html|jsx)$ ]]; then
-        prettier --write "$1" > /dev/null
-    fi
-}
-
-task() {
+run_task() {
     if [ "$PRETTIER_CONFIG" != "" ]; then
         # We want to only install the prettier config from NPM without
         # installing the rest of the dependencies in package.json.
@@ -26,10 +20,22 @@ task() {
         echo "\"$PRETTIER_CONFIG\"" > .prettierrc
     fi
 
-    foreach_changed_file run
+    echo "Running prettier"
+    echo "Version: $(prettier --version)"
+    FILES=$(echo "$1" | grep -E "\.(js|ts|scss|css|yaml|yml|html|jsx)$")
+    prettier --write $FILES > /dev/null
 
     # Restore original .prettierrc if it existed
     # so the task doesn't fail due to changes to
     # the config file.
-    git checkout .prettierrc || true
+    #git checkout .prettierrc || true > /dev/null 
+
+    if git diff > /dev/null; then
+        echo '```diff'
+        git diff
+        echo '```'
+        exit 1
+    else
+        exit 0
+    fi
 }

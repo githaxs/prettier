@@ -1,7 +1,5 @@
-version: v2
 name: Prettier
 slug: prettier
-type: content
 summary: Opinionated Code Formatter that supports many languages
 description: |
   <a href="https://prettier.io">Prettier</a> is a popular code formatter that supports many languages.
@@ -14,6 +12,12 @@ description: |
   <br>
   Githaxs recommends you use the default Prettier settings without any changes to avoid the bikeshedding discussions.
 
+capabilities:
+  - type: checkout
+  - type: checkrun
+    fix_errors: true
+runtime: bash
+show: all
 parameters:
   - name: prettier_config
     description: "A publicly available NPM package where your shared prettier config is published (i.e. @azz/prettier-config)"
@@ -24,9 +28,6 @@ default_configuration:
     org: false
 memory: 512
 timeout: 240
-subscribed_events:
-  - pull_request.opened
-  - pull_request.reopened
-  - pull_request.synchronize
-  - check_run.rerequested
-  - check_run.requested_action
+packages:
+  node:
+    - prettier
