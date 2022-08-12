@@ -18,6 +18,15 @@ capabilities:
     fix_errors: true
 runtime: bash
 show: all
+tags:
+  - JavaScript
+  - TypeScript
+  - SCSS
+  - CSS
+  - Yaml
+  - HTML
+  - JSX
+  - Formatting
 parameters:
   - name: prettier_config
     description: "A publicly available NPM package where your shared prettier config is published (i.e. @azz/prettier-config)"
