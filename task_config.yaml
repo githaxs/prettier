@@ -11,7 +11,6 @@ description: |
   <br>
   <br>
   Githaxs recommends you use the default Prettier settings without any changes to avoid the bikeshedding discussions.
-
 capabilities:
   - type: checkout
   - type: checkrun
